@@ -37,7 +37,7 @@ a:not([class]) {
 img,
 picture {
   width: 100%;
-  display: block;
+  display: inline-block;
 }
 
 /* Inherit fonts for inputs and buttons */

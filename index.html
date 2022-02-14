@@ -3,11 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Fundamentals</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./css/main.css">
   </head>
+
   <body>
-    <h1>To-Do List</h1>
+    <div class="app">
+      <aside class="todo-lists">
+  
+        <div class="lists-container">
+          <a href="#" class="list-item list-item--active">
+            <div class="wrapper">
+              <img class="list__icon" src="img/icons/house-icon.png" alt="home icon">
+              <h2 class="list__title font-heading font-heading--xs">Home</h2>
+            </div>
+            <span class="counter-box">13</span>
+          </a>
+        </div>
+  
+        <button class="list__new-task button">
+          <img src="" alt="add new item icon">
+          <span>Create new task</span>
+          <div class="command-container">
+            <img class="command__icon" src="" alt="command or control icon">
+            <img class="command__letter" src="" alt="E key">
+          </div>
+        </button>
+  
+      </aside>
+
+      <main>
+        <h1 class="font-heading font-heading--xl">Good Morning, Luis</h1>
+      </main>
+    </div>
+
     <script src="./js/index.js"></script>
   </body>
 </html>
