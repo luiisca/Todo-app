@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+}
+.grid--md {
+  gap: 4.8rem;
+}
+.grid--sm {
+  gap: 1.6rem;
+}
+
+.grid--fluid-cols {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}

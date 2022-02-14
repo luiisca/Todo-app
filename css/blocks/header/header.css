@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BLOCK MODIFIERS */
+.header__logo {
+  display: flex;
+  gap: 0.8rem;
+}
+.header__navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 3.2rem;
+  align-items: center;
+}

@@ -1,0 +1,49 @@
+/***********/
+/* PRIMARY */
+/***********/
+.button--type--primary,
+.button--type--primary:link,
+.button--type--primary:visited {
+  background-color: var(--primary-300);
+}
+.button--type--primary:hover {
+  background-color: var(--primary-400);
+}
+.button--type--primary:focus {
+  background-color: var(--primary-500);
+}
+
+/*************/
+/* SECONDARY */
+/*************/
+.button--type--secondary,
+.button--type--secondary:link,
+.button--type--secondary:visited {
+  background-color: var(--secondary-300);
+}
+.button--type--secondary:hover,
+.button--type--secondary:active {
+  background-color: var(--secondary-400);
+}
+.button--type--secondary:focus {
+  background-color: var(--secondary-300);
+  box-shadow: 0px 0px 0px 2px var(--white), 0px 0px 0px 4px var(--secondary-300);
+}
+
+/**********/
+/* SUBTLE */
+/**********/
+.button--type--subtle,
+.button--type--subtle:link,
+.button--type--subtle:visited {
+  background-color: var(--gray-100);
+  color: var(--gray-400);
+}
+.button--type--subtle:hover,
+.button--type--subtle:active {
+  background-color: var(--gray-200);
+}
+.button--type--subtle:focus {
+  background-color: var(--gray-100);
+  box-shadow: 0px 0px 0px 2px var(--white), 0px 0px 0px 4px var(--gray-100);
+}

@@ -1,0 +1,15 @@
+.non-underline {
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+  color: var(--primary-500);
+}
+.bold--tiny {
+  color: var(--primary-400);
+}
+
+.width-100 {
+  width: 100%;
+}

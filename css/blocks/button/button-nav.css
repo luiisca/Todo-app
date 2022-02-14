@@ -1,0 +1,18 @@
+.button-nav,
+.button-nav:link,
+.button-nav:visited {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+
+  color: var(--primary-500);
+  border-bottom: 1px solid transparent;
+
+  line-height: 95%;
+  transition: all 0.3s;
+}
+.button-nav:hover,
+.button-nav:focus {
+  color: var(--primary-600);
+  border-color: currentColor;
+}

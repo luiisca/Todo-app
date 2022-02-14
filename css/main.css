@@ -1,0 +1,15 @@
+@import url('global/colors.css');
+@import url('global/layout.css');
+@import url('global/positioning.css');
+@import url('global/reset.css');
+@import url('global/typography.css');
+@import url('global/visuals.css');
+
+@import url('components/button.css');
+@import url('blocks/lists/lists.css');
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
