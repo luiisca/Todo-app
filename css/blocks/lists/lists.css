@@ -1,4 +1,7 @@
 .todo-lists {
+  height: 98vh;
+  top: 10px;
+  position: sticky;
   background-color: white;
   border-radius: 14px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -25,11 +28,6 @@
   color: var(--gray-400);
 }
 
-.list-item .wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-}
 
 .list__icon {
   width: 1.6rem;

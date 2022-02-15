@@ -17,6 +17,10 @@
   text-align: center;
 }
 
+.wrapper {
+  align-items: center;
+}
+
 .mb-1 {
   margin-bottom: 0.4rem;
 }
@@ -28,6 +32,9 @@
 }
 .mb-4 {
   margin-bottom: 1.6rem;
+}
+.mb-7 {
+  margin-bottom: 2.8rem;
 }
 .mb-8 {
   margin-bottom: 3.2rem;

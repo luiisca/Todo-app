@@ -1,3 +1,11 @@
+.flex {
+  display: flex;
+}
+.flex--sm {
+  gap: 1.6rem;
+}
+
+
 .grid {
   display: grid;
 }

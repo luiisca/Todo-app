@@ -1,9 +1,13 @@
 .task-card {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 1.6rem;
   background-color: var(--white);
   border-radius: 14px;
   padding: 1.6rem;
+
+  grid-column: 2 / -1;
 }
 
 .input {
@@ -12,10 +16,21 @@
   color: var(--gray-300);
 }
 .calendar {
+  width: 150px;
   border: none;
 }
-.task-card--input {
-  /* background-color: var(--gray-200); */
+.task-card--input, .task-card--input .input, .task-card--input .calendar {
+  background-color: var(--gray-200);
+}
+.task__due {
+  border-radius: 9px;
+  padding: .4rem .8rem;
+  line-height: 1.6rem;
+  background-color: var(--gray-200);
+}
+.task__icon {
+  height: 25px;
+  width: 25px;
 }
 
 .task__check {
