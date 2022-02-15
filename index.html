@@ -4,36 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
 
   <body>
     <div class="app">
       <aside class="todo-lists">
-  
         <div class="lists-container">
           <a href="#" class="list-item list-item--active">
             <div class="wrapper">
-              <img class="list__icon" src="img/icons/house-icon.png" alt="home icon">
+              <img
+                class="list__icon"
+                src="img/icons/house-icon.png"
+                alt="home icon"
+              />
               <h2 class="list__title font-heading font-heading--xs">Home</h2>
             </div>
             <span class="counter-box">13</span>
           </a>
         </div>
-  
+
         <button class="list__new-task button grid--sm">
-          <img src="img/icons/plus-icon.svg" class='list__new-task-icon' alt="add new item icon">
+          <img
+            src="img/icons/plus-icon.svg"
+            class="list__new-task-icon"
+            alt="add new item icon"
+          />
           <span class="font-heading font-heading--xs">Create new task</span>
           <span class="command-container">
-            <img class="counter-box command__icon" src="img/icons/ctrl-icon.png" alt="command or control icon">
+            <img
+              class="counter-box command__icon"
+              src="img/icons/ctrl-icon.png"
+              alt="command or control icon"
+            />
             <span class="counter-box">E</span>
           </span>
         </button>
-  
       </aside>
 
-      <main>
-        <h1 class="font-heading font-heading--xl">Good Morning, Luis</h1>
+      <main class="tasks grid">
+        <img class='tasks__icon' src="img/icons/shapes-icon.png" alt="home list icon" />
+        <div class="tasks__greetings mb-4">
+          <h1 class="font-heading font-heading--sm">
+            Good <span>morning</span>, <span>Luis</span>
+          </h1>
+          <h2 class="tasks__day font-heading font-heading--sm font-heading--light">
+            It's Wednesday, Feb 23
+        </div>
+        </h2>
+
+        <div class="task-card task-card--input">
+          <input class="task__check task__check--done" type="checkbox" name="" id="">
+          <input class='input' type="text" name="new-task" placeholder="Write a new task"/>
+          <input class="calendar" type="date" name="due-date" id="">
+        </div>
       </main>
     </div>
 

@@ -19,6 +19,9 @@ body {
 .font-heading {
   font-weight: 500;
 }
+.font-heading--light {
+  color: var(--gray-300);
+}
 
 .font-heading--xxl {
   font-size: 6rem;

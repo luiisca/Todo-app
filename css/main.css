@@ -42,9 +42,13 @@ Medium: 11px
 
 @import url('common.blocks/button/button.css');
 @import url('blocks/lists/lists.css');
+@import url('blocks/tasks/tasks.css');
+@import url('blocks/tasks/tasks.css');
+@import url('blocks/task-card/task-card.css');
 
 .app {
   display: flex;
+  gap: 12.8rem;
   background-color: antiquewhite;
 }
 
