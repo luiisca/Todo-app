@@ -9,15 +9,22 @@
 }
 
 .list-item {
-  background-color: var(--gray-100);
-  padding: 1.8rem 2.4rem;
-  padding-right: 1.8rem;
+  padding: 1.6rem 2.4rem;
+  padding-right: 1.6rem;
   border-radius: 14px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.list-item--active {
+  background-color: var(--gray-100);
+}
+.list-item--active .counter-box {
+  background-color: var(--gray-200);
+  color: var(--gray-400);
+}
+
 .list-item .wrapper {
   display: flex;
   align-items: center;
@@ -25,15 +32,38 @@
 }
 
 .list__icon {
-  width: 1em;
-  height: 1em;
+  width: 1.6rem;
 }
 .list__title {
   display: inline-block;
 }
-
 .counter-box {
   border-radius: 9px;
-  background-color: var(--gray-200);
+  color: var(--gray-300);
+  background-color: var(--gray-100);
   padding: .4rem .8rem;
+}
+
+/* new task button */
+.list__new-task {
+  padding: 1.6rem 2.4rem;
+  padding-right: 1.6rem;
+
+  width: 100%;
+  background-color: var(--white);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.6rem 1fr auto;
+}
+.list__new-task-icon {
+  /* padding-left: 2.4rem; */
+}
+.command-container {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  gap: .8rem;
+}
+.command__icon {
+  height: 100%;
 }

@@ -40,7 +40,7 @@ Medium: 11px
 @import url('global/typography.css');
 @import url('global/visuals.css');
 
-@import url('components/button.css');
+@import url('common.blocks/button/button.css');
 @import url('blocks/lists/lists.css');
 
 .app {
