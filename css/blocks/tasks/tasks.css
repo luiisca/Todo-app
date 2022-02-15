@@ -1,7 +1,7 @@
 .tasks {
   padding: 4.8rem;
   align-items: center;
-  grid-template-columns: 40px auto;
+  grid-template-columns: 40px minmax(auto, 600px);
   grid-template-areas: 
     'icon task'
     'icon task'

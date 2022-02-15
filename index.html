@@ -53,11 +53,13 @@
         </div>
         </h2>
 
-        <div class="task-card task-card--input mb-2">
-          <input class="task__check task__check--done" type="checkbox" name="" id="">
-          <input class='input' type="text" name="new-task" placeholder="Write a new task"/>
+        <form class="task-card task-card--input mb-2">
+          <div class="wrapper flex flex--sm">
+            <input class="task__check task__check--done" type="checkbox" name="" id="">
+            <input class='input' type="text" name="new-task" id="newTask" placeholder="Write a new task"/>
+          </div>
           <input class="calendar" type="date" name="due-date" id="">
-        </div>
+        </form>
         <div class="task-card">
           <div class="wrapper flex flex--sm">
             <input class="task__check task__check--done" type="checkbox" name="" id="">
