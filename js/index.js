@@ -113,7 +113,7 @@ function Task() {
         <input class="task__check ${
           checked ? "task__check--done" : ""
         }" type="checkbox" name="checkbox" id="">
-        <span>${this.state.data.title}</span>
+        <span class="task__title">${this.state.data.title}</span>
       </div>
       <span class="wrapper flex flex--sm">
         <span class="task__due">9 Abr</span>
