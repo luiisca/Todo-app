@@ -31,50 +31,59 @@ function App() {
 
     this.newCardInputCont.addEventListener("submit", (e) => {
       e.preventDefault();
-      
-      storeNewTaskData(getInputValues());
+
+      const newTaskInstance = new Task();
+      newTaskInstance.state.data = getInputValues();
+
+      storeTaskData(newTaskInstance);
       this.input.value = "";
-      renderNewTask();
+      renderTask(newTaskInstance);
     });
 
     this.tasksContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("task__check")) {
         e.target.classList.toggle("task__check--done");
-        console.log(
-          this.state.tasks.find(
-            (task) => task.state.data.title === e.target.nextSibling.textContent
-          )
+
+        const taskTitle = this.state.tasks.find(
+          (task) => task.data.title === e.target.nextElementSibling.textContent
         );
+
+        taskTitle.checked = !taskTitle.checked;
+        updateLocalStorage();
       }
     });
   };
 
-  const storeNewTaskData = (taskData) => {
-    this.state.tasks.push(taskData);
+  const updateLocalStorage = () => {
+    localStorage.setItem("tasks", JSON.stringify(this.state.tasks));
+  };
+
+  const storeTaskData = (taskInstance) => {
+    this.state.tasks.push(taskInstance.state);
     localStorage.setItem("tasks", JSON.stringify(this.state.tasks));
   };
 
   const getTasksFromLocalStorage = () => {
-    const tasks = JSON.parse(localStorage.getItem("tasks"));
-    if (tasks) {
-      this.state.tasks = tasks;
-      return tasks;
+    const tasksStates = JSON.parse(localStorage.getItem("tasks"));
+    if (tasksStates) {
+      this.state.tasks = tasksStates;
+      return tasksStates;
     }
   };
 
   const renderAllTasks = () => {
-    const tasksData = getTasksFromLocalStorage(); // Not storing in state, let's see if it create bugs :)
-    if (tasksData) tasksData.forEach((data) => {
-      const task = new Task();
-      task.state.data = data;
-      task.render();
-    });
+    if (getTasksFromLocalStorage().length > 0) {
+      this.state.tasks = getTasksFromLocalStorage();
+
+      this.state.tasks.forEach((state) => {
+        const task = new Task();
+        task.state = state;
+        task.render(this.tasksContainer);
+      });
+    }
   };
-  const renderNewTask = () => {
-    const tasks = this.state.tasks;
-    const task = new Task();
-    task.state.data = tasks[tasks.length - 1];
-    task.render();
+  const renderTask = (task) => {
+    task.render(this.tasksContainer);
   };
 }
 
@@ -86,13 +95,14 @@ function Task() {
       details: "",
       dueDate: "",
     },
-    tasksContainer: document.querySelector(".tasks"),
-    firstTaskCard: document.querySelector("div.task-card"),
   };
 
-  this.render = () => {
-    const card = generateCardTask();
-    this.state.tasksContainer.insertBefore(card, this.state.firstTaskCard);
+  this.render = (container) => {
+    const firstTaskCard = document.querySelector("div.task-card");
+    const card = generateCardTask(this.state.checked);
+    card.children[0].children[0].checked = this.state.checked;
+
+    container.insertBefore(card, firstTaskCard);
   };
 
   const generateCardTask = (checked) => {
@@ -114,7 +124,7 @@ function Task() {
         />
       </span>`;
     return div;
-  }
+  };
 }
 
 (function initApp() {
