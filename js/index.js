@@ -15,13 +15,14 @@ function App() {
     this.newCardInputCont = document.querySelector(".task-card--input");
     this.addNewCardBttn = document.querySelector(".list__new-task");
     this.input = document.querySelector(".input");
+    this.date = document.querySelector('input[type="date"]');
     this.tasksContainer = document.querySelector(".tasks");
   };
 
   const getInputValues = () => {
     const title = this.input.value;
     const details = this.input.value;
-    const dueDate = this.input.value;
+    const dueDate = this.date.value;
     return { title, details, dueDate };
   };
 
@@ -72,7 +73,7 @@ function App() {
   };
 
   const renderAllTasks = () => {
-    if (getTasksFromLocalStorage().length > 0) {
+    if (getTasksFromLocalStorage()) {
       this.state.tasks = getTasksFromLocalStorage();
 
       this.state.tasks.forEach((state) => {
@@ -99,13 +100,24 @@ function Task() {
 
   this.render = (container) => {
     const firstTaskCard = document.querySelector("div.task-card");
+    // let date =
+    //   new Date(this.state.data.dueDate) == 'Invalid Date' ? "" : new Date(this.state.data.dueDate);
+    // console.log(date);
+    try {
+      this.state.data.dueDate = new Intl.DateTimeFormat("default", { day: 'numeric', month: "short" }).format(
+        new Date(this.state.data.dueDate)
+      );
+    } catch (error) {
+      this.state.data.dueDate = "";
+    }
+
     const card = generateCardTask(this.state.checked);
     card.children[0].children[0].checked = this.state.checked;
 
     container.insertBefore(card, firstTaskCard);
   };
 
-  const generateCardTask = (checked) => {
+  const generateCardTask = (checked, date) => {
     const div = document.createElement("div");
     div.classList.add("task-card");
     div.innerHTML = `
@@ -116,7 +128,7 @@ function Task() {
         <span class="task__title">${this.state.data.title}</span>
       </div>
       <span class="wrapper flex flex--sm">
-        <span class="task__due">9 Abr</span>
+        <span class="${this.state.data.dueDate ? 'task__due' : ''}">${this.state.data.dueDate}</span>
         <img
           class="task__icon"
           src="img/icons/shapes-icon.png"
@@ -124,6 +136,13 @@ function Task() {
         />
       </span>`;
     return div;
+  };
+
+  const getInputDate = () => {
+    const date = this.state.data.dueDate;
+    const day = date.getDate();
+    const month = date.getMonth();
+    return newDate;
   };
 }
 
